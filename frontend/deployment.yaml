@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bookhub-frontend
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: bookhub-frontend
+  template:
+    metadata:
+      labels:
+        app: bookhub-frontend
+    spec:
+      containers:
+      - name: frontend
+        image: bookhub-frontend:latest
+        imagePullPolicy: Never
+        env:
+        - name: API_URL
+          value: "http://bookhub-backend:5000"
+        ports:
+        - containerPort: 80

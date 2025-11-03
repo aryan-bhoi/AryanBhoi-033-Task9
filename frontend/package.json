@@ -1,0 +1,12 @@
+{
+  "name": "bookhub-frontend",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "npx serve -s build",
+    "build": "npx create-react-app temp && rm -rf build && mv temp/build . && rm -rf temp"
+  },
+  "dependencies": {
+    "serve": "^14.2.0"
+  }
+}
